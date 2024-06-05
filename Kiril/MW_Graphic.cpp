@@ -48,6 +48,7 @@ HRESULT MainWindow::Create_GraphicResources()
         {
             m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Gray), &m_pSolBrush_wallpaper);
             m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Yellow), &m_pSolBrush_ellipse);
+            m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::GreenYellow), &m_pSolBrush_target);
             hr = m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Red), &m_pSolBrush_platform);
             m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White), &m_pSolBrush_text);
         }
@@ -85,6 +86,18 @@ void MainWindow::Draw_GraphicResources()
         m_pRenderTarget->FillEllipse(D2D1::Ellipse(D2D1::Point2F(x_ellipse, y_ellipse), radius_ellipse, radius_ellipse), m_pSolBrush_ellipse);
 
         m_pRenderTarget->FillRectangle(D2D1::RectF(x_platform_1, y_platform_1, x_platform_2, y_platform_2), m_pSolBrush_platform);
+
+        if (block_hit_1 == false) m_pRenderTarget->FillRectangle(block_1, m_pSolBrush_target);
+        if (block_hit_2 == false) m_pRenderTarget->FillRectangle(block_2, m_pSolBrush_target);
+        if (block_hit_3 == false) m_pRenderTarget->FillRectangle(block_3, m_pSolBrush_target);
+        if (block_hit_4 == false) m_pRenderTarget->FillRectangle(block_4, m_pSolBrush_target);
+        if (block_hit_5 == false) m_pRenderTarget->FillRectangle(block_5, m_pSolBrush_target);
+        if (block_hit_6 == false) m_pRenderTarget->FillRectangle(block_6, m_pSolBrush_target);
+        if (block_hit_7 == false) m_pRenderTarget->FillRectangle(block_7, m_pSolBrush_target);
+        if (block_hit_8 == false) m_pRenderTarget->FillRectangle(block_8, m_pSolBrush_target);
+        if (block_hit_9 == false) m_pRenderTarget->FillRectangle(block_9, m_pSolBrush_target);
+        if (block_hit_10 ==false) m_pRenderTarget->FillRectangle(block_10, m_pSolBrush_target);
+
 
         m_pRenderTarget->EndDraw();
 
