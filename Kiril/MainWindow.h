@@ -3,6 +3,7 @@
 #include<Windows.h>
 #include<d2d1.h>
 #include<dwrite.h>
+#include<stdio.h>
 
 #pragma comment(lib,"d2d1")
 #pragma comment(lib,"dwrite")
@@ -14,6 +15,8 @@ class MainWindow : public BaseWindow<MainWindow>
 {
     RECT Client_rect;
 
+    HWND hwnd_EditControl_1;
+    HWND hwnd_EditControl_2;
 
     // Координати для шару
     int x_ellipse = 300;
@@ -35,6 +38,10 @@ class MainWindow : public BaseWindow<MainWindow>
     int x_platform_22 = 150;
     int y_platform_22 = 20;
     int stap_platform2 = 30;
+
+    // Табло очков
+    int score_1 = 0;
+    int score_2 = 0;
 
     ID2D1Factory* m_pFactory_graphic;
     ID2D1DCRenderTarget* m_pRenderTarget;
